@@ -1,5 +1,5 @@
 const PORT = 8000; //
-const HOST = "172.30.1.31"; // here!!! 192.168.0.41 fetching data
+const HOST = "notion-api-template.vercel.app"; // here!!! 192.168.0.41 fetching data
 
 // 2. /leftpage에 뜬 데이터를 받아서,
 // .json() 형식으로 저장한 data를 getDataFromBackend_1()로 반환한다. 
