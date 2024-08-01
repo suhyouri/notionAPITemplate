@@ -4,8 +4,8 @@ const answerBoxLeft = document.getElementById("answerbox_left");
 const leftAnswer = document.getElementById("answer");
 const leftNickname = document.getElementById("nickname");
 
-const HOST = "localhost"
-const PORT = 8000;
+const HOST = "175.195.151.75"
+const PORT = 456;
 
 //4. 버튼의 연쇄반응으로 새롭게 짠 json 구조를 POST로 데이터를 DB에 넣는다.
 // submitFormToNotion_left

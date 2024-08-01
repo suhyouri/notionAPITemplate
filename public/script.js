@@ -1,5 +1,5 @@
-const HOST = "localhost";
-const PORT = 8000;
+const HOST = "175.195.151.75";
+const PORT = 456;
 
 // 2. /leftpage에 뜬 데이터를 받아서,
 // .json() 형식으로 저장한 data를 getDataFromBackend_1()로 반환한다.

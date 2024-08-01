@@ -14,7 +14,7 @@ const server = http.createServer(app);
 
 //database 
 const databaseId = process.env.NOTION_API_DATABASE;
-const HOST = process.env.HOST || "localhost";
+const HOST = process.env.HOST || "175.195.151.75";
 const PORT = process.env.PORT || 3000;
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 app.use(cors());
