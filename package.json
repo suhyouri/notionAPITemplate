@@ -2,7 +2,7 @@
   "name": "notion-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "script.js",
   "scripts": {
     "start": "nodemon server.js"
   },
@@ -15,8 +15,6 @@
     "express": "^4.17.1",
     "http": "^0.0.1-security",
     "nodemon": "^2.0.20",
-    "postcss-cli": "^10.0.0",
-    "socket.io": "^4.5.3",
-    "socket.io-client": "^4.5.3"
+    "postcss-cli": "^10.0.0"
   }
 }

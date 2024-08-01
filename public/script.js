@@ -1,10 +1,10 @@
-const PORT = process.env.PORT;
-const HOST = "notion-api-template.vercel.app"; // here!!! 192.168.0.41 fetching data
+const HOST = "localhost";
+const PORT = 8000;
 
 // 2. /leftpage에 뜬 데이터를 받아서,
 // .json() 형식으로 저장한 data를 getDataFromBackend_1()로 반환한다.
 const getDataFromBackend_1 = async () => {
-  const rest = await fetch(`https://${HOST}:${PORT}/leftpage`);
+  const rest = await fetch(`http://${HOST}:${PORT}/leftpage`);
   const data = await rest.json();
   // console.log(data);
   return data;

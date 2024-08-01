@@ -1,17 +1,17 @@
-//index.html input에 부여되어있는 id값이다 
+//index.html input에 부여되어있는 id값이다
 const answerFormLeft = document.getElementById("answer-form-left");
 const answerBoxLeft = document.getElementById("answerbox_left");
 const leftAnswer = document.getElementById("answer");
 const leftNickname = document.getElementById("nickname");
 
-const HOST = "notion-api-template.vercel.app";//here!!
-const PORT = process.env.PORT;
+const HOST = "localhost"
+const PORT = 8000;
 
 //4. 버튼의 연쇄반응으로 새롭게 짠 json 구조를 POST로 데이터를 DB에 넣는다.
-// submitFormToNotion_left 
+// submitFormToNotion_left
 function submitFormToNotion_left(newAnsobj) {
   // console.log("i will make", newAnsobj);
-  fetch(`https://${HOST}:${PORT}/submitFormToNotion_left`, {
+  fetch(`http://${HOST}:${PORT}/submitFormToNotion_left`, {
     method: "post",
     headers: {
       Accept: "application/json",
@@ -32,7 +32,7 @@ function submitFormToNotion_left(newAnsobj) {
     });
 }
 
-// 3. send 버튼이 눌릴 때 발생하는 이벤트로 
+// 3. send 버튼이 눌릴 때 발생하는 이벤트로
 // 들어온 값으로 새로운 json구조를 짠다.
 function handleTodoSubmit_left(e) {
   e.preventDefault();
@@ -95,5 +95,3 @@ const success = () => {
   // );
   return `${year}-${month}-${day}, ${hour}:${minute}`;
 };
-
-

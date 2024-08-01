@@ -1,7 +1,10 @@
 const { Client } = require("@notionhq/client");
 let bodyParser = require("body-parser");
 let jsonParser = bodyParser.json();
-require("dotenv").config();
+let dotenv = require("dotenv");
+dotenv.config();
+
+// require("dotenv").config();
 
 const { getDatabase_1 } = require('./notion');
 const cors = require("cors");
@@ -11,11 +14,18 @@ const express = require("express");
 const app = express();
 const http = require("http");
 const server = http.createServer(app);
+// const { Server } = require("socket.io");
+// const io = new Server(server, {
+//   cors: {
+//     origin: ["https://admin.socket.io"],
+//     credentials: true,
+//   },
+// });
 
 //database 
 const databaseId = process.env.NOTION_API_DATABASE;
-const HOST = "notion-api-template.vercel.app"; // here!!!!
-const PORT = process.env.PORT;
+const HOST = process.env.HOST || "127.0.0.1";
+const PORT = process.env.PORT || 3000;
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 app.use(cors());
 
