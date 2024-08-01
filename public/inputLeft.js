@@ -5,13 +5,13 @@ const leftAnswer = document.getElementById("answer");
 const leftNickname = document.getElementById("nickname");
 
 const HOST = "notion-api-template.vercel.app";//here!!
-const PORT = 8000;
+const PORT = process.env.PORT;
 
 //4. 버튼의 연쇄반응으로 새롭게 짠 json 구조를 POST로 데이터를 DB에 넣는다.
 // submitFormToNotion_left 
 function submitFormToNotion_left(newAnsobj) {
   // console.log("i will make", newAnsobj);
-  fetch(`http://${HOST}:${PORT}/submitFormToNotion_left`, {
+  fetch(`https://${HOST}:${PORT}/submitFormToNotion_left`, {
     method: "post",
     headers: {
       Accept: "application/json",

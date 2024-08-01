@@ -3,36 +3,27 @@ let bodyParser = require("body-parser");
 let jsonParser = bodyParser.json();
 require("dotenv").config();
 
-
 const { getDatabase_1 } = require('./notion');
 const cors = require("cors");
-// const PORT = 8000;
 
 //socket.io
 const express = require("express");
 const app = express();
 const http = require("http");
 const server = http.createServer(app);
-// const { Server } = require("socket.io");
-// const io = new Server(server, {
-//   cors: {
-//     origin: ["https://admin.socket.io"],
-//     credentials: true,
-//   },
-// });
 
 //database 
 const databaseId = process.env.NOTION_API_DATABASE;
-const HOST = "172.30.1.31"; // here!!!!
-const portNum = process.env.PORT;
+const HOST = "notion-api-template.vercel.app"; // here!!!!
+const PORT = process.env.PORT;
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 app.use(cors());
 
 app.use(express.static('public'));
 
 //socket ver
-server.listen(portNum, HOST, () => {
-  console.log("Starting proxy at " + HOST + ":" + portNum);
+server.listen(PORT, HOST, () => {
+  console.log("Starting proxy at " + HOST + ":" + PORT);
 });
 
 // ---> 1. Query a database (res)
