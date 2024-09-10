@@ -1,0 +1,218 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin:0;
+  padding: 0;
+  font-size: 16px;
+}
+
+header{
+  width: 100%;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main{
+  display:grid;
+  background-color: #FE4814;
+  color: white;
+  font-size: 1.5rem;
+  grid-template-columns: 100%; 
+  /* grid-template-columns: repeat(1, 1fr);  */
+  /* grid-template-rows: repeat(1, 1fr); */
+  width: 100%;
+  height: 100%;
+  text-transform: uppercase;
+}
+
+/* 1. question box */
+main > div:nth-child(1){
+  margin:0;
+  padding: 1rem 0 1rem 0 ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 2. answer box */
+main > div:nth-child(2){
+  width: 100%;
+  height: 77.5vh;
+  overflow-y: scroll;
+  scroll-behavior: auto;
+  position: relative;
+}
+
+/* 3. input form */
+form{
+  /* background-color: #6C1CFF; */
+  display: grid;
+  grid-template-columns: 60% 20% 100px;
+  justify-content:space-between;
+  align-items: center;
+  overflow:hidden;
+  width: 100%;
+  padding-top: 1.2vh;
+  padding-bottom: 1.2vh;
+  z-index: 1000;
+}
+
+input {
+  color:aliceblue;
+  width: 90%;
+  height: 25px;
+  padding: 3px 20px;
+  box-sizing: border-box;
+  border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+::placeholder {
+  color: white;
+  opacity: 1;
+  text-align: left; 
+}
+
+input:focus {
+  outline: white;
+}
+
+input:focus::placeholder{
+    color:transparent;
+}
+
+input:hover{
+  border:none;
+  border-bottom: solid 1px rgb(255, 255, 255);
+  transform-origin: 0% 50%;
+}
+
+input:after{
+  display:block;
+  content: '';
+}
+
+input:invalid {
+		border-color: #DD2C00;
+}
+
+button {
+  background-color: transparent;
+  color: white;
+  border-radius: 20px;
+  border: solid .5px white;
+  width: 80%;
+  height: 25px;
+  margin: 0 2px 0 2px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right:10px;
+}
+
+button:hover{
+  background-color: white;
+  cursor: pointer;
+}
+
+li {
+    cursor:pointer;
+    list-style: none;
+}
+
+/*답변 */
+.guest{
+    font-size: .5rem;
+    justify-content: right;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+footer {
+    font-size:1rem;
+    padding: .3rem;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover{
+  background-color: white;
+  color: #FE4814;
+}
+
+.answers {
+  /* background-color: #6C1CFF; */
+  margin: 0px;
+  display: grid;
+  grid-template-columns: max-content;
+  justify-content: right;
+  grid-template-rows: 5%;
+  /* padding : 10px; */
+}
+
+.post {
+    cursor: pointer;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    position: relative;
+    text-align: right;
+}
+
+.answer{
+    /* display: grid; */
+    display: grid;
+  font-size: 1rem;
+  border-bottom: dashed 1px #ffffff;
+  border-radius: 50%;
+  /* background-color: #6C1CFF; */
+  grid-template-columns: max-content;
+  justify-content: right;
+  grid-template-rows: 5%;
+    
+}
+
+/* li{
+  display: grid;
+  font-size: 1rem;
+  border-bottom: dashed 1px #ffffff;
+  border-radius: 50%;
+  /* background-color: #6C1CFF; 
+  grid-template-columns: max-content;
+  justify-content: right;
+  grid-template-rows: 5%;
+} */
+
+/* 스크롤바 전체 */
+::-webkit-scrollbar {
+  width: 2px; /* 스크롤바의 너비 설정 */
+}
+
+/* 스크롤바 배경 */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* 배경색 설정 */
+}
+
+/* 스크롤바 핸들 */
+::-webkit-scrollbar-thumb {
+  background: #888; /* 핸들의 색상 설정 */
+  border-radius: 10px; /* 핸들의 모서리 둥글게 설정 */
+}
+
+/* 핸들이 호버할 때 색상 변경 */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* 핸들이 호버할 때 색상 설정 */
+}
