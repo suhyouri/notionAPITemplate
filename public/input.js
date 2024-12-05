@@ -1,11 +1,11 @@
 //index.html 부여되어있는 id가 있는 html 태그를
 //getElementById로 변수에 담는다.
-const answerForm = document.getElementById('answer-form');
-const answerBox = document.getElementById('answerbox');
-const leftAnswer = document.getElementById('answer');
-const leftNickname = document.getElementById('nickname');
+const answerForm = document.getElementById("answer-form");
+const answerBox = document.getElementById("answerbox");
+const leftAnswer = document.getElementById("answer");
+const leftNickname = document.getElementById("nickname");
 
-const HOST = 'vercel-notion-express.vercel.app'; // *** local ip
+const HOST = "notion-api-template.vercel.app"; // *** local ip
 // const PORT = 3000; // *** port num
 
 //4. 버튼의 연쇄반응으로 새롭게 짠 json 구조를 POST로 데이터를 DB에 넣는다.
@@ -13,10 +13,10 @@ const HOST = 'vercel-notion-express.vercel.app'; // *** local ip
 function submitFormToNotion(newAnsobj) {
   // console.log("i will make", newAnsobj);
   fetch(`https://${HOST}/submitFormToNotion`, {
-    method: 'post',
+    method: "post",
     headers: {
-      Accept: 'application/json',
-      'Content-type': 'application/json',
+      Accept: "application/json",
+      "Content-type": "application/json",
     },
     body: JSON.stringify({
       Nickname: newAnsobj.nickname,
@@ -26,10 +26,10 @@ function submitFormToNotion(newAnsobj) {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log('success!', data);
+      console.log("success!", data);
     })
     .catch((err) => {
-      console.log('Error: ' + err);
+      console.log("Error: " + err);
     });
 }
 
@@ -47,8 +47,8 @@ function handleTodoSubmit(e) {
   const timestamp = success();
 
   //값을 비워준다.
-  leftAnswer.value = '';
-  leftNickname.value = '';
+  leftAnswer.value = "";
+  leftNickname.value = "";
 
   //들어온 값으로 새로운 json구조를 짠다.
   const newAnsobj = {
@@ -62,8 +62,8 @@ function handleTodoSubmit(e) {
   submitFormToNotion(newAnsobj);
 
   //4. Update Input Data to Website
-  const section = document.createElement('section');
-  section.classList.add('post');
+  const section = document.createElement("section");
+  section.classList.add("post");
   section.innerHTML = `
           <div class="answer">${newAnsobj.answer}</div>
           <div class="guest">${newAnsobj.nickname}</div>
@@ -72,7 +72,7 @@ function handleTodoSubmit(e) {
   answerBox.insertBefore(section, answerBox.firstElementChild);
 }
 
-answerForm.addEventListener('submit', handleTodoSubmit);
+answerForm.addEventListener("submit", handleTodoSubmit);
 
 // 시간기록하기Time Recording
 const success = () => {
