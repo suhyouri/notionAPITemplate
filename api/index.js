@@ -19,7 +19,6 @@ const HOST = process.env.HOST; // local IP
 const portNum = process.env.PORT; // PORT Number
 
 // app.use(cors());
-app.use(cors({ origin: "https://notion-api-template.vercel.app" }));
 
 app.use(express.static("public"));
 
